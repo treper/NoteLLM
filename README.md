@@ -82,7 +82,7 @@ The data is organized as follows:
 
 ### Prepare Pre-trained Weights
 
-You can download the pre-trained weights for LLMs or vision encoders from huggingface and place them in `../../model/`.
+You can download the pre-trained weights for LLMs or vision encoders from huggingface and place them in `../model/`.
 
 ## Citation
 
