@@ -14,11 +14,10 @@ class Gate(nn.Module):
             nn.init.xavier_normal_(module.weight)
     
     def forward(self,image_emb,text_emb):
-        ori_emb = image_emb
         whole = torch.cat([image_emb,text_emb],1)
         z = self.sigmoid(self.trans_all(whole))
         emb = z*image_emb + (1-z)*text_emb
-        return emb+ori_emb
+        return emb
 
 class GatewLn(nn.Module):
     def __init__(self,dim):
@@ -36,10 +35,9 @@ class GatewLn(nn.Module):
             nn.init.xavier_normal_(module.weight)
     
     def forward(self,image_emb,text_emb):
-        ori_emb = image_emb
         whole = torch.cat([image_emb,text_emb],1)
         z = self.sigmoid(self.trans_all(whole))
         image_emb = self.tanh(self.trans1(image_emb))
         text_emb = self.tanh(self.trans2(text_emb))
         emb = z*image_emb + (1-z)*text_emb
-        return emb+ori_emb
+        return emb
