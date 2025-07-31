@@ -21,7 +21,7 @@ torchrun --nproc_per_node=8 --master_port=17005 run.py \
     --noteid2id_path ../data/${EXP_NAME}_notes_id.npy \
     --train_pairdata_path ../data/note_pairs_train.csv \
     --val_pairdata_path ../data/note_pairs_val.csv \
-    --bf16 True \
+    --fp16 True \
     --output_dir ../log/$EXP_NAME/ \
     --num_train_epochs 1 \
     --per_device_train_batch_size $PER_DEVICE_TRAIN_BATCH_SIZE \
