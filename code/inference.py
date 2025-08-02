@@ -75,7 +75,8 @@ def main(
             base_model_path,
             torch_dtype=torch.float16,
             kwargs = model_args,
-            ignore_mismatched_sizes = True
+            ignore_mismatched_sizes = True,
+            low_cpu_mem_usage=True
             )
     else:
         model = AutoModelForCausalLM.from_pretrained(
