@@ -73,7 +73,7 @@ def main(
         selectLlama = eval(model_args.model_type)
         model = selectLlama.from_pretrained(
             base_model_path,
-            torch_dtype=torch.bfloat16,
+            torch_dtype=torch.float16,
             kwargs = model_args,
             ignore_mismatched_sizes = True
             )
